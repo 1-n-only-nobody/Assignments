@@ -11,11 +11,6 @@ public class VehicleInsurance extends Insurance{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public VehicleInsurance(int policyNumber, String policyHolderName, int age, double insuredAmount) {
-		super(policyNumber, policyHolderName, age, insuredAmount);
-		// TODO Auto-generated constructor stub
-	}
-	
 	public VehicleInsurance(String vehicleModel, int yearOfManufacture, double costOfVehicle) {
 		super();
 		this.vehicleModel = vehicleModel;

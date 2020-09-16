@@ -32,13 +32,16 @@ public class Application {
 		
 //		mgr.showProductsLegacy(productList);
 		
-		mgr.calculateDiscount(productList);
-		System.out.println("Quantity of TVs : " + tv.getQuantity());
-		System.out.println("Quantity of fridges : " + fridge.getQuantity());
-		System.out.println("Discount on TVs : " + tv.getDiscount());
-		System.out.println("Discount on fridges : " + fridge.getDiscount());
-		System.out.println("Price of TVs : " + mgr.calculateAmount(tv));
-		System.out.println("Price of fridges : " + mgr.calculateAmount(fridge));
+		productList = mgr.calculateDiscount(productList);
+//		System.out.println("Quantity of TVs : " + tv.getQuantity());
+//		System.out.println("Quantity of fridges : " + fridge.getQuantity());
+//		System.out.println("Discount on TVs : " + tv.getDiscount());
+//		System.out.println("Discount on fridges : " + fridge.getDiscount());
+//		System.out.println("Price of TVs : " + mgr.calculateAmount(tv));
+//		System.out.println("Price of fridges : " + mgr.calculateAmount(fridge));
+		for (Product eachProduct : productList) {
+			System.out.println("Name : " + eachProduct.getProductName() + ", Quantity : " + eachProduct.getQuantity() + ", Discount : " + eachProduct.getDiscount() + ", Price : " + mgr.calculateAmount(eachProduct));
+		}
 		
 	}
 	

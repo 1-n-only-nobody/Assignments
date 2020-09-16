@@ -4,8 +4,8 @@ public class Application {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Insurance policyHolder1 = new Insurance(123, "Abcdef", 65, 50000);
-		Insurance policyHolder2 = new Insurance(234, "Zyxwvu", 50, 20000);
+		Insurance policyHolder1 = new Insurance(123, "Abcdef", 30, 50000);
+		Insurance policyHolder2 = new Insurance(234, "Zyxwvu", 10, 20000);
 		
 		ManageInsurance mgr = new ManageInsurance();
 		

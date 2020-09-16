@@ -73,6 +73,12 @@ public class VehicleInsurance extends Insurance{
 		// TODO Auto-generated method stub
 		return premium;
 	}
+
+	@Override
+	public String toString() {
+		return "VehicleInsurance [vehicleModel=" + vehicleModel + ", yearOfManufacture=" + yearOfManufacture
+				+ ", costOfVehicle=" + costOfVehicle + "]";
+	}
 	
 	
 	

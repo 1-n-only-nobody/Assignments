@@ -13,11 +13,13 @@ public class Application {
 		
 		premium = policyHolder1.calculatePremium();
 		
-		System.out.println("Name : " + policyHolder1.getPolicyHolderName() + ", Premium : " + premium);
+//		System.out.println("Name : " + policyHolder1.getPolicyHolderName() + ", Premium : " + premium);
 		
+		System.out.println(policyHolder1);
 		premium = policyHolder2.calculatePremium();
 		
-		System.out.println("Name : " + policyHolder2.getPolicyHolderName() + ", Premium : " + premium);
+//		System.out.println("Name : " + policyHolder2.getPolicyHolderName() + ", Premium : " + premium);
+		System.out.println(policyHolder2);
 		
 		
 		

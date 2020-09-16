@@ -64,4 +64,10 @@ public class Insurance {
 		}
 		return premium;
 	}
+
+	@Override
+	public String toString() {
+		return "Insurance [policyNumber=" + policyNumber + ", policyHolderName=" + policyHolderName + ", age=" + age
+				+ ", insuredAmount=" + insuredAmount + "]";
+	}
 }

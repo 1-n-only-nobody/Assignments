@@ -3,19 +3,23 @@ package com.training;
 public class ManageProduct {
 	
 	//Example for If-Else
-	public double calculateDiscount(Product product) {
+	public Product[] calculateDiscount(Product[] productList) {
 		
 		double discount = 0.0;
 		
-		if (product.getRatePerUnit() > 500 && product.getRatePerUnit() <= 1000) {
+		for (Product eachProduct : productList) {
 			
-			discount = 0.10;
+			if (eachProduct.getRatePerUnit() > 500 && eachProduct.getRatePerUnit() <= 1000) {
+				
+				discount = 0.10;
+			}
+			else if (eachProduct.getRatePerUnit() > 1000) {
+				
+				discount = 0.15;
+			}
+			eachProduct.setDiscount(discount);
 		}
-		else if (product.getRatePerUnit() > 1000) {
-			
-			discount = 0.15;
-		}
-		return discount;
+		return productList;
 	}
 	
 	public double calculateTax(Product product) {
@@ -42,11 +46,27 @@ public class ManageProduct {
 		}
 		return tax;
 	}
-	public void showProducts() {
+	
+	public void showProductsLegacy(Product[] productList) {
 		
-		for (int i = 0; i < 10; i++) {
+		for (int i = 0; i < productList.length; i++) {
 			
-			System.out.println("product");
+			System.out.println("Product : " + i + " => " + productList[i].getProductName());
 		}
+	}
+	
+	public void showProductsForEach(Product[] productList) {
+		
+		for (Product eachProduct : productList) {
+			
+			System.out.println(eachProduct.getProductName() + " : " + eachProduct.getRatePerUnit());
+		}
+	}
+	
+	public double calculateAmount(Product product) {
+		
+		double amountFinal = 0;
+		amountFinal = ( product.getRatePerUnit() * product.getQuantity() ) - ( ( product.getQuantity() * product.getRatePerUnit() )* product.getDiscount() );
+		return amountFinal;
 	}
 }

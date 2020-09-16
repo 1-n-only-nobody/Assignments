@@ -5,7 +5,7 @@ public class Insurance {
 	private int policyNumber;
 	private String policyHolderName;
 	private int age;
-	private double InsuredAmount;
+	private double insuredAmount;
 	
 	public Insurance() {
 		super();
@@ -17,7 +17,7 @@ public class Insurance {
 		this.policyNumber = policyNumber;
 		this.policyHolderName = policyHolderName;
 		this.age = age;
-		InsuredAmount = insuredAmount;
+		this.insuredAmount = insuredAmount;
 	}
 
 	public int getPolicyNumber() {
@@ -44,12 +44,24 @@ public class Insurance {
 		this.age = age;
 	}
 
-	public double getInsuredAmount() {
-		return InsuredAmount;
+	public double getinsuredAmount() {
+		return insuredAmount;
 	}
 
-	public void setInsuredAmount(double insuredAmount) {
-		InsuredAmount = insuredAmount;
+	public void setinsuredAmount(double insuredAmount) {
+		insuredAmount = insuredAmount;
 	}
 	
+	public double calculatePremium() {
+		
+		double premium;
+		
+		if (age < 25 ) {
+			premium = ( insuredAmount * 0.6 );
+		}
+		else {
+			premium = ( insuredAmount * 0.7 );
+		}
+		return premium;
+	}
 }

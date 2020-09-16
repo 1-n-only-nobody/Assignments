@@ -30,7 +30,7 @@ public class Application {
 		
 //		mgr.showProductsForEach(productList);
 		
-//		mgr.showProductsLegacy(productList);
+		mgr.showProductsLegacy(productList);
 		
 		productList = mgr.calculateDiscount(productList);
 //		System.out.println("Quantity of TVs : " + tv.getQuantity());

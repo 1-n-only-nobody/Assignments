@@ -90,5 +90,12 @@ public class Product {
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Product Name : " + this.productName + ", Rate : " + this.ratePerUnit + ", Quantity : " + this.quantity + ", Product ID : " + this.productId;
+	}
+	
 	
 }

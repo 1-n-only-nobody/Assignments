@@ -11,7 +11,7 @@ public class Application {
 		
 		double discount = mgr.calculateDiscount(tv);
 		
-		System.out.println("Discount :--> " + discount);
+		System.out.println("Discount Percentage :--> " + (discount * 100) + "%");
 		
 		double tax = mgr.calculateTax(tv);
 		System.out.println("Tax Percentage :--> " + (tax * 100) + "%");

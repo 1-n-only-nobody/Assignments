@@ -23,9 +23,9 @@ public class Application {
 		
 		
 		
-		VehicleInsurance vehiclePolicyHolder1 = new VehicleInsurance(456, "Qwerty", 20, 25000, "2", 1, 50000);
+		VehicleInsurance vehiclePolicyHolder1 = new VehicleInsurance(456, "Qwerty", 20, 25000, "2", 2017, 50000);
 		
-		VehicleInsurance vehiclePolicyHolder2 = new VehicleInsurance(567, "Poiuy", 40, 78000, "4", 3, 70000);
+		VehicleInsurance vehiclePolicyHolder2 = new VehicleInsurance(567, "Poiuy", 40, 78000, "4", 2020, 70000);
 		
 		premium = vehiclePolicyHolder1.calculatePremium();
 		

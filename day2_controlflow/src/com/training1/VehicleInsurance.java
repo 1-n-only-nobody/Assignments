@@ -51,7 +51,7 @@ public class VehicleInsurance extends Insurance{
 		double premium;
 		switch (vehicleModel) {
 		case "2":
-			if (yearOfManufacture < 2) {
+			if (yearOfManufacture > 2018) {
 				premium = 0.50 * costOfVehicle;
 			}
 			else {
@@ -59,7 +59,7 @@ public class VehicleInsurance extends Insurance{
 			}
 			break;
 		case "4":
-			if (yearOfManufacture < 2) {
+			if (yearOfManufacture > 2018) {
 				premium = 0.40 * costOfVehicle;
 			}
 			else {

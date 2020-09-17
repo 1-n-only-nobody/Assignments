@@ -9,6 +9,7 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		int loopControl = 0;
 		Showroom saiTractors = new TractorShowroom();
 		
 		Scanner sc = new Scanner(System.in);
@@ -16,16 +17,24 @@ public class Application {
 		do {
 			key = sc.nextInt();
 			
-			if ( key < 1 || key > 3 ) {
+			Automobile selected = saiTractors.getProduct(key);
+			
+			if ( selected == null ) {
+				
 				System.out.println("Enter a valid value \"1\" OR \"2\" OR \"3\".");
 			}
+			else {
+				loopControl = 1;
+				saiTractors.printEstimate(selected);
+			}
 			
-		}while(key<1 || key>3);
+			
+		}while(loopControl == 0);
 //		int key = Integer.parseInt(args[0]);
 		
-		Automobile selected = saiTractors.getProduct(key);
+//		Automobile selected = saiTractors.getProduct(key);
 		
-		saiTractors.printEstimate(selected);
+//		saiTractors.printEstimate(selected);
 
 		
 //		System.out.println(key);

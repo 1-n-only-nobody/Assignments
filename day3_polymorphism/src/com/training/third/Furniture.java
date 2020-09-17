@@ -42,22 +42,25 @@ public class Furniture implements Rentable {
 		this.ratePerDay = ratePerDay;
 	}
 
-	@Override
 	public String getModel() {
 		// TODO Auto-generated method stub
 		return model;
 	}
 
-	@Override
 	public String getProductId() {
 		// TODO Auto-generated method stub
 		return productId;
 	}
 
-	@Override
 	public double getRatePerDay() {
 		// TODO Auto-generated method stub
 		return ratePerDay;
+	}
+
+	@Override
+	public double calulateRent() {
+		// TODO Auto-generated method stub
+		return 99;
 	}
 
 }

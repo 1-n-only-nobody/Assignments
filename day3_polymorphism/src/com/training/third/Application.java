@@ -19,7 +19,7 @@ public class Application {
 		do {
 			key = sc.nextInt();
 			
-			Rentable selected = myStore.getProduct(key);
+			Rentable selected = myStore.getProduct(key,"ABC","ABC",500,2);
 			
 			if ( selected == null ) {
 				
@@ -27,10 +27,12 @@ public class Application {
 			}
 			else {
 				loopControl = 1;
-				myStore.printDetails(selected);
+				rentAmount = selected.calulateRent();
+				System.out.println(rentAmount);
+//				myStore.printDetails(selected);
 				System.out.println("Enter no. of days item is rented : ");
 				days = sc.nextInt();
-				rentAmount = myStore.calculateRent(selected, days);
+				rentAmount = rentAmount * days;
 				System.out.println(rentAmount);
 			}
 			

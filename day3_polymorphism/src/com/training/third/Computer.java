@@ -31,18 +31,15 @@ public class Computer implements Rentable {
 		this.ratePerDay = ratePerDay;
 	}
 
-	@Override
 	public String getProductId() {
 		// TODO Auto-generated method stub
 		return productId;
 	}
 
-	@Override
 	public String getModel() {
 		return model;
 	}
 
-	@Override
 	public double getRatePerDay() {
 		// TODO Auto-generated method stub
 		return ratePerDay;
@@ -58,6 +55,12 @@ public class Computer implements Rentable {
 
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
+	}
+
+	@Override
+	public double calulateRent() {
+		// TODO Auto-generated method stub
+		return 100;
 	}
 
 }

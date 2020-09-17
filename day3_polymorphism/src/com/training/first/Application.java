@@ -14,6 +14,14 @@ public class Application {
 		bill.printFees(sharma);
 		
 		bill.printFees(rajesh);
+		
+		WrapperAndStatic obj = new WrapperAndStatic();
+		
+		obj.parse("1234");
+		
+		System.out.println(obj.useToString(1234).length());
+		
+		System.out.println(obj.useValueOf());
 	}
 
 }

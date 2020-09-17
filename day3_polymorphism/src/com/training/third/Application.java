@@ -9,35 +9,47 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int loopControl = 0;
-		double rentAmount;
+		int iterator = 0;
+		double rentAmount[] = new double[20];
 		int days;
+		int quantity;
+		double rentAmountFinal = 0;
+		
 		
 		Store myStore = new Store();
 		
 		Scanner sc = new Scanner(System.in);
 		int key;
 		do {
+			System.out.println("Enter key of Product you want  1 --> Computer  and 2 --> Furniture: ");
 			key = sc.nextInt();
-			
-			Rentable selected = myStore.getProduct(key,"ABC","ABC",500,2);
+			System.out.println("Enter quantity of product : ");
+			quantity = sc.nextInt();
+			Rentable selected = myStore.getProduct(key,"Model1","C1",500,quantity);
 			
 			if ( selected == null ) {
 				
-				System.out.println("Enter a valid value \"1\" OR \"2\".");
+				System.out.println("Enter a valid key value \"1\" OR \"2\".");
 			}
 			else {
 				loopControl = 1;
-				rentAmount = selected.calulateRent();
-				System.out.println(rentAmount);
+				rentAmount[iterator] = selected.calulateRent();
+				System.out.println(rentAmount[iterator]);
 //				myStore.printDetails(selected);
 				System.out.println("Enter no. of days item is rented : ");
 				days = sc.nextInt();
-				rentAmount = rentAmount * days;
-				System.out.println(rentAmount);
+				rentAmount[iterator] = rentAmount[iterator] * days;
+				iterator++;
+//				System.out.println(rentAmount);
 			}
 			
 			
-		}while(loopControl == 0);
+		}while(iterator != 5 || loopControl == 0);
+		
+		for (double d : rentAmount) {
+			rentAmountFinal += d;
+		}
+		System.out.println(rentAmountFinal);
 	}
 
 }

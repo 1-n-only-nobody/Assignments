@@ -60,7 +60,8 @@ public class Furniture implements Rentable {
 	@Override
 	public double calulateRent() {
 		// TODO Auto-generated method stub
-		return 99;
+		double rentAmount = this.ratePerDay * this.quantity;
+		return rentAmount;
 	}
 
 }

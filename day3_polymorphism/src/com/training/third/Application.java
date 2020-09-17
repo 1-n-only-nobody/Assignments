@@ -10,6 +10,7 @@ public class Application {
 		// TODO Auto-generated method stub
 		int loopControl = 0;
 		double rentAmount;
+		int days;
 		
 		Store myStore = new Store();
 		
@@ -28,8 +29,8 @@ public class Application {
 				loopControl = 1;
 				myStore.printDetails(selected);
 				System.out.println("Enter no. of days item is rented : ");
-				key = sc.nextInt();
-				rentAmount = myStore.calculateRent(selected, key);
+				days = sc.nextInt();
+				rentAmount = myStore.calculateRent(selected, days);
 				System.out.println(rentAmount);
 			}
 			

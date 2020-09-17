@@ -14,6 +14,7 @@ public class Application {
 		int days;
 		int quantity;
 		double rentAmountFinal = 0;
+		int exit = 1;
 		
 		
 		Store myStore = new Store();
@@ -40,11 +41,16 @@ public class Application {
 				days = sc.nextInt();
 				rentAmount[iterator] = rentAmount[iterator] * days;
 				iterator++;
+				System.out.println("If you want to quit press : 0");
+				exit = sc.nextInt();
+				if ( exit == 0 ) {
+					break;
+				}
 //				System.out.println(rentAmount);
 			}
 			
 			
-		}while(iterator != 5 || loopControl == 0);
+		}while(iterator != 20 || loopControl == 0);
 		
 		for (double d : rentAmount) {
 			rentAmountFinal += d;

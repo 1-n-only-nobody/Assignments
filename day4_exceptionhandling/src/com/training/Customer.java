@@ -67,7 +67,14 @@ public class Customer {
 		}
 		this.mobileNumber = mobileNumber;
 	}
-	
-	
 
+
+	@Override
+	public String toString() {
+		return "Customer [customerName=" + customerName + ", customerId=" + customerId + ", email=" + email
+				+ ", mobileNumber=" + mobileNumber + "]";
+	}
+	
+	
+	
 }

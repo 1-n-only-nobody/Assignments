@@ -33,4 +33,8 @@ public class CustomerService {
 		
 	}
 
+	public String encryptEmail(Customer cust) {
+		
+		return "";
+	}
 }

@@ -35,6 +35,21 @@ public class CustomerService {
 
 	public String encryptEmail(Customer cust) {
 		
+		String email = cust.getEmail();
+		
+		boolean status = email.contains("@");
+		
+		if (!status) {
+			try {
+				throw new Exception("Invalid Email Id.");
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println(e.getMessage());
+				e.printStackTrace();
+			} finally {
+				System.err.println("Inside Finally Block");
+			}
+		}
 		return "";
 	}
 }

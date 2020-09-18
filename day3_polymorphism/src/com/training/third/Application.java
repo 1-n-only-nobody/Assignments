@@ -56,6 +56,8 @@ public class Application {
 			rentAmountFinal += d;
 		}
 		System.out.println(rentAmountFinal);
+		
+		sc.close();
 	}
 
 }

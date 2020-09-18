@@ -49,7 +49,7 @@ public class Insurance {
 	}
 
 	public void setinsuredAmount(double insuredAmount) {
-		insuredAmount = insuredAmount;
+		this.insuredAmount = insuredAmount;
 	}
 	
 	public double calculatePremium() {

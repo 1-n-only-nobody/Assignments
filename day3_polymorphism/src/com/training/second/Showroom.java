@@ -26,7 +26,7 @@ public class Showroom {
 	
 	public void printEstimate (Automobile polyAuto) {
 		
-		System.out.println(polyAuto.APPNAME);
+		System.out.println(Automobile.APPNAME);
 		
 		System.out.println(polyAuto.getModel());
 		System.out.println(polyAuto.getColor());

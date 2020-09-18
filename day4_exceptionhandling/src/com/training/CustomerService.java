@@ -41,14 +41,16 @@ public class CustomerService {
 		
 		if (!status) {
 			try {
-				throw new Exception("Invalid Email Id.");
+				throw new Exception("Excemption message : Invalid Email Id.");
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
-				e.printStackTrace();
+//				e.printStackTrace();
+				return "From Catch";
 			} finally {
 				System.err.println("Inside Finally Block");
 			}
+//			System.out.println("Outside Finally Block");
 		}
 		return "";
 	}

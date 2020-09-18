@@ -8,7 +8,7 @@ public class Application {
 			Customer ram = new Customer();
 			
 			ram.setCustomerId("202");
-			ram.setEmail("ram@abc.com");
+			ram.setEmail("ramabc.com");
 			ram.setMobileNumber(999);
 			ram.setCustomerName("Ramesh");
 			
@@ -16,6 +16,8 @@ public class Application {
 			
 			custServ.printCustomer(ram);
 			System.out.println(custServ.generateUserId(ram));
+			
+			custServ.encryptEmail(ram);
 		}
 		catch(Exception e) {
 			System.err.println("Mobile number should be positive.");

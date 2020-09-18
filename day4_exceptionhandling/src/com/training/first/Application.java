@@ -1,4 +1,6 @@
-package com.training;
+package com.training.first;
+
+import com.training.exceptions.RangeCheckException;
 
 public class Application {
 
@@ -9,7 +11,7 @@ public class Application {
 			
 			ram.setCustomerId("202");
 			ram.setEmail("ramabc.com");
-			ram.setMobileNumber(999);
+			ram.setMobileNumber(999999999);
 			ram.setCustomerName("Ramesh");
 			
 			CustomerService custServ = new CustomerService();
@@ -17,7 +19,10 @@ public class Application {
 			custServ.printCustomer(ram);
 			System.out.println(custServ.generateUserId(ram));
 			
-			custServ.encryptEmail(ram);
+			System.out.println(custServ.encryptEmail(ram));
+		}
+		catch(RangeCheckException e) {
+			System.err.println(e.getMessage());
 		}
 		catch(Exception e) {
 			System.err.println("Mobile number should be positive.");

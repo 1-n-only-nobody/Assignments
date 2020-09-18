@@ -1,4 +1,4 @@
-package com.training;
+package com.training.first;
 
 public class CustomerService {
 	
@@ -35,6 +35,7 @@ public class CustomerService {
 
 	public String encryptEmail(Customer cust) {
 		
+		String encrypted = null;
 		String email = cust.getEmail();
 		
 		boolean status = email.contains("@");
@@ -52,6 +53,10 @@ public class CustomerService {
 			}
 //			System.out.println("Outside Finally Block");
 		}
-		return "";
+		else {
+			
+			encrypted = "abcde" + email + "!4341@";
+		}
+		return encrypted;
 	}
 }

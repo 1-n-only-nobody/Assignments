@@ -1,4 +1,6 @@
-package com.training;
+package com.training.first;
+
+import com.training.exceptions.RangeCheckException;
 
 public class Customer {
 	
@@ -59,11 +61,11 @@ public class Customer {
 	}
 
 
-	public void setMobileNumber(long mobileNumber) throws Exception {
+	public void setMobileNumber(long mobileNumber) throws RangeCheckException {
 		
 		if (mobileNumber < 0 || mobileNumber > 99999) {
 			
-			throw new Exception("Invalid Mobile Number");
+			throw new RangeCheckException("Invalid Mobile Number");
 		}
 		this.mobileNumber = mobileNumber;
 	}

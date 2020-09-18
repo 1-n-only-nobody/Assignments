@@ -3,7 +3,7 @@ package com.training;
 public class Customer {
 	
 	private String customerName;
-	private int customerId;
+	private String customerId;
 	private String email;
 	private long mobileNumber;
 	
@@ -14,7 +14,7 @@ public class Customer {
 	}
 
 
-	public Customer(String customerName, int customerId, String email, long mobileNumber) {
+	public Customer(String customerName, String customerId, String email, long mobileNumber) {
 		super();
 		this.customerName = customerName;
 		this.customerId = customerId;
@@ -33,12 +33,13 @@ public class Customer {
 	}
 
 
-	public int getCustomerId() {
+	public String getCustomerId() {
 		return customerId;
 	}
 
 
-	public void setCustomerId(int customerId) {
+	public void setCustomerId(String customerId) {
+		
 		this.customerId = customerId;
 	}
 
@@ -58,7 +59,12 @@ public class Customer {
 	}
 
 
-	public void setMobileNumber(long mobileNumber) {
+	public void setMobileNumber(long mobileNumber) throws Exception {
+		
+		if (mobileNumber < 0 || mobileNumber > 99999) {
+			
+			throw new Exception("Invalid Mobile Number");
+		}
 		this.mobileNumber = mobileNumber;
 	}
 	

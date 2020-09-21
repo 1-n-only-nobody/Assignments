@@ -229,17 +229,16 @@ public class BusinessService {
 	
 	public void deleteFile(File file, long cardNumber) {
 						
-		File newFile = new File("tempfile.txt");
+//		File newFile = new File("tempfile.txt");
 		BufferedReader in = null;
 		FileWriter outChar = null;
 		String[] line = new String[10];
-		String[] temp = new String[5];
+//		String[] temp = new String[5];
 		int i = 0;
 		int flag = 0;
 		String attributes[] = new String[4];
 //		int i = 0;
 		try {
-			outChar = new FileWriter(newFile);
 			in = new BufferedReader(new FileReader(file));
 			while ((line[i] = in.readLine()) != null) {
 				attributes = line[i].split(",");
@@ -249,16 +248,17 @@ public class BusinessService {
 				if(Long.parseLong(attributes[1].trim()) == cardNumber) {
 					flag = i;
 				}
-				else {
-					outChar.write(line[i-1]);
-					outChar.write("\n");
-				}
 				}
 //				System.arraycopy(line, flag, temp, flag-1, i-flag);
 				System.arraycopy(line, flag, line, flag-1, line.length - flag);
 //				System.out.println(line[flag]);
 //				System.out.println(line[flag-1]);
 //				System.out.println(line[0]]);
+				outChar = new FileWriter(file);
+				for(i = 0; line[i]!=null;i++) {
+					outChar.write(line[i]);
+					outChar.write("\n");
+				}
 			outChar.close();
 			in.close();
 //			file.delete();

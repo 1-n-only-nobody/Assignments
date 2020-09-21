@@ -243,10 +243,11 @@ public class BusinessService {
 //				System.out.println(attributes[0] + attributes[1] + attributes[2] + attributes[3]);
 //				i++;
 				if(Long.parseLong(attributes[1].trim()) == cardNumber) {
-					continue;
 				}
+				else {
 				outChar.write(line);
 				outChar.write("\n");
+				}
 			}
 			outChar.close();
 			in.close();

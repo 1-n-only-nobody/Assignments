@@ -1,4 +1,4 @@
-package com.training.first;
+package com.training.services;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;

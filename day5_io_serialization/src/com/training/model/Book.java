@@ -1,4 +1,4 @@
-package com.training.model.book;
+package com.training.model;
 
 import java.io.Serializable;
 

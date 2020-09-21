@@ -125,10 +125,7 @@ public class BusinessService {
 		CreditCard[] creditCards = new CreditCard[3];
 		CreditCard creditCard = null;
 		int i = 0;
-		if(choice == 0) {
-
-
-//		
+		if(choice == 0) {	
 		ObjectInputStream inStream = null;
 		
 		try {
@@ -151,7 +148,7 @@ public class BusinessService {
 			
 			while ((line = in.readLine()) != null) {
 				attributes = line.split(",");
-				System.out.println(attributes[0] + attributes[1] + attributes[2] + attributes[3]);
+//				System.out.println(attributes[0] + attributes[1] + attributes[2] + attributes[3]);
 				creditCard = new CreditCard(attributes[0], Long.parseLong(attributes[1].trim()), Double.parseDouble(attributes[2].trim()), Integer.parseInt(attributes[3].trim()));
 				creditCards[i] = creditCard;
 				i++;
@@ -175,12 +172,57 @@ public class BusinessService {
 	
 	}
 	
-	public void deleteFile(File file, long cardNumber) {
+	public CreditCard readFromFile(File file, long cardNumber) {
+		CreditCard[] creditCards = new CreditCard[3];
+		int i = 0;	
+		ObjectInputStream inStream = null;
 		
 		try {
-			FileWriter outChar = new FileWriter(file,true);
+			inStream = new ObjectInputStream(new FileInputStream(file));
+			creditCards = (CreditCard[]) inStream.readObject();
 			
-			outChar.write("");
+			for (CreditCard creditCard : creditCards) {
+				if (creditCard.getCardNumber() == cardNumber) {
+					return creditCard;
+				}
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();}
+		return null;
+		
+		
+	}
+	
+	public void deleteFile(File file, long cardNumber) {
+		
+		File newFile = new File("tempfile.txt");
+		BufferedReader in = null;
+		FileWriter outChar = null;
+		String line = null;
+		String attributes[] = new String[4];
+//		int i = 0;
+		try {
+			outChar = new FileWriter(newFile);
+			in = new BufferedReader(new FileReader(file));
+			while ((line = in.readLine()) != null) {
+				attributes = line.split(",");
+//				System.out.println(attributes[0] + attributes[1] + attributes[2] + attributes[3]);
+//				i++;
+				if(Long.parseLong(attributes[1].trim()) == cardNumber) {
+					continue;
+				}
+				outChar.write(line);
+				outChar.write("\n");
+			}
+			outChar.close();
+			in.close();
+			file.delete();
+			newFile.renameTo(file);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

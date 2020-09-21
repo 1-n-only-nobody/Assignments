@@ -29,9 +29,9 @@ public class CreditApplication {
 		String path = "D:/AddToROG/";
 //		service.storeInCharacters(creditCard, file);
 //		service.storeInBytes(creditCard, file);
-//		service.deleteFile(file, 234567);
-		CreditCard creditCard4 = service.readFromFile(file, 1, 123456);
-		System.out.println(creditCard4);
+		service.deleteFile(file, 234567);
+//		CreditCard creditCard4 = service.readFromFile(file, 1, 123456);
+//		System.out.println(creditCard4);
 		
 	}
 

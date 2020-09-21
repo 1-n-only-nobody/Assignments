@@ -1,5 +1,8 @@
 package com.training.first;
 
+import java.io.BufferedInputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -64,6 +67,56 @@ public class BookService {
 		}
 		
 		
+		return book;
+	}
+	
+	public boolean writeWithDataStream (Book book, File file) {
+		
+		DataOutputStream outStream = null;
+		
+		try {
+			outStream = new DataOutputStream(new FileOutputStream(file));
+			
+			outStream.writeInt(book.getBookNumber());
+			outStream.writeUTF(book.getBookName());
+			outStream.writeUTF(book.getAuthor());
+			outStream.writeDouble(book.getPrice());
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return true;
+	}
+	
+	public Book readWithDataStream (File file) {
+		
+		DataInputStream instream = null;
+		
+		Book book = new Book();
+		
+		try {
+			instream = new DataInputStream(new BufferedInputStream(new FileInputStream(file)));
+			
+			book.setBookNumber(instream.readInt());
+			book.setBookName(instream.readUTF());
+			book.setAuthor(instream.readUTF());
+			book.setPrice(instream.readDouble());
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return book;
 	}
 }

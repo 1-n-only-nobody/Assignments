@@ -172,11 +172,11 @@ public class BusinessService {
 	
 	}
 	
-	public CreditCard readFromFile(File file, long cardNumber) {
+	public CreditCard readFromFile(File file, int choice, long cardNumber) {
 		CreditCard[] creditCards = new CreditCard[3];
 		int i = 0;	
 		ObjectInputStream inStream = null;
-		
+		if(choice == 0) {
 		try {
 			inStream = new ObjectInputStream(new FileInputStream(file));
 			creditCards = (CreditCard[]) inStream.readObject();
@@ -192,6 +192,36 @@ public class BusinessService {
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();}
+		}
+		else {
+			CreditCard creditCard = null;
+			BufferedReader in = null;
+			String line = null;
+			String attributes[] = new String[4];
+			try {
+				in = new BufferedReader(new FileReader(file));
+				
+				while ((line = in.readLine()) != null) {
+					attributes = line.split(",");
+//					System.out.println(attributes[0] + attributes[1] + attributes[2] + attributes[3]);
+					if(Long.parseLong(attributes[1].trim()) == cardNumber) {
+					creditCard = new CreditCard(attributes[0], Long.parseLong(attributes[1].trim()), Double.parseDouble(attributes[2].trim()), Integer.parseInt(attributes[3].trim()));
+					return creditCard;
+					}
+				}
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			try {
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
 		return null;
 		
 		

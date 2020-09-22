@@ -45,7 +45,9 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 	@Override
 	public Invoice findById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		
+		return this.invList.get(id);
 	}
 
 	@Override
@@ -63,6 +65,19 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 	public boolean remove(Invoice entity) {
 		// TODO Auto-generated method stub
 		return this.invList.remove(entity);
+	}
+
+	@Override
+	public boolean update(Invoice oldEntity, Invoice newEntity) {
+		// TODO Auto-generated method stub
+		int index = 0;
+		boolean result = false;
+		if(this.invList.contains(oldEntity)) {
+			index = this.invList.indexOf(oldEntity);
+			this.invList.set(index, newEntity);
+			result = true;
+		}
+		return result;
 	}
 
 }

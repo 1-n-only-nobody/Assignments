@@ -35,11 +35,11 @@ public class Application {
 
 		Invoice ram = new Invoice(101, "Ramesh", 4500);
 		
-		Invoice raj = new Invoice(101, "Rajesh", 5500);
+		Invoice raj = new Invoice(102, "Rajesh", 5500);
 		
-		Invoice rak = new Invoice(101, "Rakesh", 5500);
+		Invoice rak = new Invoice(103, "Rakesh", 5500);
 		
-		Invoice kam = new Invoice(101, "Kamlesh", 6500);
+		Invoice kam = new Invoice(104, "Kamlesh", 6500);
 		
 		InvoiceDAO dao = new InvoiceDaoImpl();
 		
@@ -51,10 +51,18 @@ public class Application {
 		
 		printList(invList);
 		
-		invList.remove(kam);
+		dao.remove(kam);
 		
 		System.out.println("After removal");
 		printList(invList);
+		
+		dao.update(raj, kam);
+		System.out.println("After update.");
+		printList(invList);
+		
+		System.out.println("find by id.");
+		Invoice invoice = dao.findById(1);
+		System.out.println(invoice);
 	}
 
 }

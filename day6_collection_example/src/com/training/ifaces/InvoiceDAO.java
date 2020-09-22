@@ -17,6 +17,7 @@ public interface InvoiceDAO {
 	boolean add(Invoice entity);
 	boolean add(Invoice... invoices);
 	Invoice findById(int id);
-	public boolean remove(Invoice entity);
+	boolean remove(Invoice entity);
+	boolean update(Invoice oldEntity, Invoice newEntity);
 	
 }

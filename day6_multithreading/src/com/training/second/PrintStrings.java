@@ -2,7 +2,7 @@ package com.training.second;
 
 public class PrintStrings {
 
-	public static void printString( String str1, String str2) {
+	public static synchronized void printString( String str1, String str2) {
 		
 		System.out.println(str1);
 		

@@ -5,6 +5,7 @@ public class MainApplication {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		// Creating object
 		FileSyncReaderWriter fileSyncReaderWriter = new FileSyncReaderWriter();
 		
 		Thread t1 = new Thread() {
@@ -13,6 +14,8 @@ public class MainApplication {
 			public void run() {
 				// TODO Auto-generated method stub
 //				super.run();
+				System.out.println("read thread starts.");
+				//Indirectly adding code to the run method, by calling another method
 				System.out.println(fileSyncReaderWriter.read());
 			}
 			
@@ -26,7 +29,9 @@ public class MainApplication {
 			public void run() {
 				// TODO Auto-generated method stub
 //				super.run();
-				fileSyncReaderWriter.write("Hello My name is Manan.");
+				System.out.println("write thread starts.");
+				//Indirectly adding code to the run method, by calling another method
+				fileSyncReaderWriter.write("Write this to file.");
 			}
 			
 		};

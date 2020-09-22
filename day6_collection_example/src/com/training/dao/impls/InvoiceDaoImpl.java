@@ -59,4 +59,10 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 		return result;
 	}
 
+	@Override
+	public boolean remove(Invoice entity) {
+		// TODO Auto-generated method stub
+		return this.invList.remove(entity);
+	}
+
 }

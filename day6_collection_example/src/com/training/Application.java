@@ -16,6 +16,17 @@ import com.training.ifaces.InvoiceDAO;
  */
 public class Application {
 
+	
+	public static void printList(Collection<Invoice> invList) {
+		
+		Iterator<Invoice> iterator = invList.iterator();
+		
+		while (iterator.hasNext()) {
+			Invoice inv = (Invoice) iterator.next();
+			
+			System.out.println(inv);
+		}
+	}
 	/**
 	 * @param args
 	 */
@@ -38,13 +49,12 @@ public class Application {
 		
 		Collection<Invoice> invList = dao.findAll();
 		
-		Iterator<Invoice> iterator = invList.iterator();
+		printList(invList);
 		
-		while (iterator.hasNext()) {
-			Invoice inv = (Invoice) iterator.next();
-			
-			System.out.println(inv);
-		}
+		invList.remove(kam);
+		
+		System.out.println("After removal");
+		printList(invList);
 	}
 
 }

@@ -61,7 +61,7 @@ public class Application {
 		printList(invList);
 		
 		System.out.println("find by id.");
-		Invoice invoice = dao.findById(1);
+		Invoice invoice = dao.findById(101);
 		System.out.println(invoice);
 	}
 

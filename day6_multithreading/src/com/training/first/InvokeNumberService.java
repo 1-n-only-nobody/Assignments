@@ -32,6 +32,7 @@ public class InvokeNumberService implements Runnable {
 		//Calling the code that has to be executed in the thread
 		//Indirectly adding code to the run method, by calling another method
 		this.service.sumNumbers(countTo);
+		
 	}
 
 }

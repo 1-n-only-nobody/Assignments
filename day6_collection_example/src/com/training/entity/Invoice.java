@@ -2,7 +2,7 @@ package com.training.entity;
 
 import java.io.Serializable;
 
-public class Invoice implements Serializable {
+public class Invoice implements Serializable, Comparable<Invoice> {
 
 	/**
 	 * 
@@ -72,6 +72,14 @@ public class Invoice implements Serializable {
 	 */
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+	@Override
+	public int compareTo(Invoice otherObj) {
+		// TODO Auto-generated method stub
+		if (this.invoiceNumber < otherObj.invoiceNumber) return -1;
+		if (this.invoiceNumber > otherObj.invoiceNumber) return 11;
+		return 0;
 	}
 
 	@Override

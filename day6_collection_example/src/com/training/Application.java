@@ -63,6 +63,10 @@ public class Application {
 		System.out.println("find by id.");
 		Invoice invoice = dao.findById(101);
 		System.out.println(invoice);
+		
+		System.out.println("Sorted List");
+		
+		printList(dao.sortByInvoiceNumber());
 	}
 
 }

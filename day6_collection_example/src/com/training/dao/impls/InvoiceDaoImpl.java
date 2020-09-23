@@ -5,6 +5,7 @@ package com.training.dao.impls;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import com.training.entity.Invoice;
@@ -82,6 +83,13 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 			result = true;
 		}
 		return result;
+	}
+
+	@Override
+	public Collection<Invoice> sortByInvoiceNumber() {
+		// TODO Auto-generated method stub
+		Collections.sort(this.invList);
+		return this.invList;
 	}
 
 }

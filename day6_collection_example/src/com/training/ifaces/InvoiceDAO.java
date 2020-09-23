@@ -14,6 +14,7 @@ import com.training.entity.Invoice;
 public interface InvoiceDAO {
 
 	Collection<Invoice> findAll();
+	Collection<Invoice> sortByInvoiceNumber();
 	boolean add(Invoice entity);
 	boolean add(Invoice... invoices);
 	Invoice findById(int id);

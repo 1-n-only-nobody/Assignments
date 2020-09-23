@@ -18,7 +18,20 @@ import com.training.ifaces.Hospital;
  */
 public class HospitalImplementation implements Hospital {
 
-	private HashMap<Doctor, ArrayList<Patient>> appointments = new HashMap<Doctor, ArrayList<Patient>>();
+	
+	private HashMap<Doctor, ArrayList<Patient>> appointments;
+	
+	/**
+	 * 
+	 */
+	public HospitalImplementation() {
+		super();
+		appointments = new HashMap<Doctor, ArrayList<Patient>>();
+		// TODO Auto-generated constructor stub
+	}
+
+
+//	private HashMap<Doctor, ArrayList<Patient>> appointments = new HashMap<Doctor, ArrayList<Patient>>();
 	
 	// Checks if doctor exists or not.
 	boolean exists(Doctor doctor) {

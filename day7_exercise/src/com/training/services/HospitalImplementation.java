@@ -34,7 +34,7 @@ public class HospitalImplementation implements Hospital {
 	
 	//add a patient to the docter selected
 	@Override
-	public boolean createAppoinment(Patient patient, Doctor doctor) {
+	public boolean createAppoinment(Patient patient, Doctor doctor) throws Exception {
 		
 		if (this.exists(doctor)) {
 			ArrayList<Patient> tempPatientList = new ArrayList<>();
@@ -50,8 +50,9 @@ public class HospitalImplementation implements Hospital {
 			System.out.println(appointments);
 			return true;
 		}else {
-			System.out.println("Doctor does not exist.");
-			return false;
+//			System.out.println("Doctor does not exist.");
+			throw new Exception("Doctor does not exist.");
+//			return false;
 		}
 		
 		
@@ -59,19 +60,20 @@ public class HospitalImplementation implements Hospital {
 
 	//gets appointments for a particular doctor
 	@Override
-	public ArrayList<Patient> getAppointments(Doctor doctor) {
+	public ArrayList<Patient> getAppointments(Doctor doctor) throws Exception {
 		// TODO Auto-generated method stub
 		if (this.exists(doctor)) {
 			return appointments.get(doctor);
 		}else {
-			System.out.println("Doctor does not exist.");
-			return null;
+//			System.out.println("Doctor does not exist.");
+			throw new Exception("Doctor does not exist.");
+//			return null;
 		}
 	}
 
 	//cancels an appointment of a patient from a doctor
 	@Override
-	public boolean cancelAppointment(Doctor doctor, Patient patient) {
+	public boolean cancelAppointment(Doctor doctor, Patient patient) throws Exception {
 		// TODO Auto-generated method stub
 		if (this.exists(doctor)) {
 			ArrayList<Patient> tempPatientList = new ArrayList<>();
@@ -90,10 +92,10 @@ public class HospitalImplementation implements Hospital {
 				System.out.println(tempPatientList);
 				return true;
 			} 
-		}
-		else {
-			System.out.println("Doctor does not exist.");
-			return false;
+		}else {
+//			System.out.println("Doctor does not exist.");
+//			return false;
+			throw new Exception("Doctor does not exist.");
 		}
 		return false;
 		

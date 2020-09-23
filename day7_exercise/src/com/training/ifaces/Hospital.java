@@ -21,8 +21,8 @@ public interface Hospital {
 //	boolean createPatient(Patient patient);
 //	HashMap<Doctor, ArrayList<Patient>> getAllAppointments();
 	boolean appointDoctor(Doctor doctor);
-	boolean createAppoinment(Patient patient, Doctor doctor);
+	boolean createAppoinment(Patient patient, Doctor doctor) throws Exception;
 	boolean cancelAppointmentForDoctor(Doctor doctor);
-	ArrayList<Patient> getAppointments(Doctor doctor);
-	boolean cancelAppointment(Doctor doctor, Patient patient);
+	ArrayList<Patient> getAppointments(Doctor doctor) throws Exception;
+	boolean cancelAppointment(Doctor doctor, Patient patient) throws Exception;
 }

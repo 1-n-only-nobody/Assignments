@@ -27,32 +27,38 @@ public class Application {
 		hospitalImplementation.appointDoctor(doctor2);
 		hospitalImplementation.appointDoctor(doctor3);
 		
-		System.out.println("Adding 3 patients to doctor 1");
-		hospitalImplementation.createAppoinment(patient1, doctor1);
-		hospitalImplementation.createAppoinment(patient2, doctor1);
-		hospitalImplementation.createAppoinment(patient3, doctor1);
-		
-		System.out.println("Adding 2 patients to doctor 2");
-		hospitalImplementation.createAppoinment(patient4, doctor2);
-		hospitalImplementation.createAppoinment(patient5, doctor2);
-		
-		System.out.println("Adding 1 patients to doctor 3");
-		hospitalImplementation.createAppoinment(patient6, doctor3);
-		
-		System.out.println("Getting all appointments of doctor 2");
-		System.out.println(hospitalImplementation.getAppointments(doctor2));
-		
-		System.out.println("Cancelling appointment of patient 5 from doctor 1");
-		hospitalImplementation.cancelAppointment(doctor1, patient5);
-		
-		System.out.println("Cancelling appointment of patient 2 from doctor 1");
-		hospitalImplementation.cancelAppointment(doctor1, patient2);
-		
-		System.out.println("Cancelling all appointment of doctor 2");
-		hospitalImplementation.cancelAppointmentForDoctor(doctor2);
-		
-		System.out.println("Trying to add patients to non-existing doctor 4.");
-		hospitalImplementation.createAppoinment(patient4, doctor4);
+		try {
+			System.out.println("Adding 3 patients to doctor 1");
+			hospitalImplementation.createAppoinment(patient1, doctor1);
+			hospitalImplementation.createAppoinment(patient2, doctor1);
+			hospitalImplementation.createAppoinment(patient3, doctor1);
+			
+			System.out.println("Adding 2 patients to doctor 2");
+			hospitalImplementation.createAppoinment(patient4, doctor2);
+			hospitalImplementation.createAppoinment(patient5, doctor2);
+			
+			System.out.println("Adding 1 patients to doctor 3");
+			hospitalImplementation.createAppoinment(patient6, doctor3);
+			
+			System.out.println("Getting all appointments of doctor 2");
+			System.out.println(hospitalImplementation.getAppointments(doctor2));
+			
+			System.out.println("Cancelling appointment of patient 5 from doctor 1");
+			hospitalImplementation.cancelAppointment(doctor1, patient5);
+			
+			System.out.println("Cancelling appointment of patient 2 from doctor 1");
+			hospitalImplementation.cancelAppointment(doctor1, patient2);
+			
+			System.out.println("Cancelling all appointment of doctor 2");
+			hospitalImplementation.cancelAppointmentForDoctor(doctor2);
+			
+			System.out.println("Trying to add patients to non-existing doctor 4.");
+			hospitalImplementation.createAppoinment(patient4, doctor4);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.err.println(e.getMessage());
+//			e.printStackTrace();
+		}
 	}
 
 }

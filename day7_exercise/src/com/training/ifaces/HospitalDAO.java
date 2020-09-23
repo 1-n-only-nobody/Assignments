@@ -14,7 +14,7 @@ import com.training.entity.Patient;
  * @author manan
  *
  */
-public interface Hospital {
+public interface HospitalDAO {
 
 	String APPNAME = "Sahayadri Hospital Appoinment Management System";
 	

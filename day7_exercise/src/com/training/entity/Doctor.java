@@ -1,6 +1,6 @@
 package com.training.entity;
 
-import com.training.ifaces.Hospital;
+import com.training.ifaces.HospitalDAO;
 
 /**
  * @author manan

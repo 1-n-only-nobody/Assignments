@@ -2,7 +2,7 @@ package com.training;
 
 import com.training.entity.Doctor;
 import com.training.entity.Patient;
-import com.training.services.HospitalImplementation;
+import com.training.services.HospitalDAOImplementation;
 
 public class Application {
 
@@ -20,7 +20,7 @@ public class Application {
 		Patient patient5 = new Patient(500, "Joe");
 		Patient patient6 = new Patient(600, "Johnny");
 		
-		HospitalImplementation hospitalImplementation = new HospitalImplementation();
+		HospitalDAOImplementation hospitalImplementation = new HospitalDAOImplementation();
 		
 		System.out.println("creating 3 doctors");
 		hospitalImplementation.appointDoctor(doctor1);

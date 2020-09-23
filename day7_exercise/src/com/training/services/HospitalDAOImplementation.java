@@ -10,13 +10,13 @@ import java.util.Set;
 
 import com.training.entity.Doctor;
 import com.training.entity.Patient;
-import com.training.ifaces.Hospital;
+import com.training.ifaces.HospitalDAO;
 
 /**
  * @author manan
  *
  */
-public class HospitalImplementation implements Hospital {
+public class HospitalDAOImplementation implements HospitalDAO {
 
 	
 	private HashMap<Doctor, ArrayList<Patient>> appointments;
@@ -24,7 +24,7 @@ public class HospitalImplementation implements Hospital {
 	/**
 	 * 
 	 */
-	public HospitalImplementation() {
+	public HospitalDAOImplementation() {
 		super();
 		appointments = new HashMap<Doctor, ArrayList<Patient>>();
 		// TODO Auto-generated constructor stub

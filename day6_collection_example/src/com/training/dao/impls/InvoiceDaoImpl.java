@@ -97,7 +97,7 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 
 	@Override
 	public Collection<Invoice> sortBy(String propName) {
-		// TODO Auto-generated method stub
+		// Try and use a different factory method to do this.
 		String lowerPropName = propName.toLowerCase();
 		switch(lowerPropName) {
 		case "customername" :

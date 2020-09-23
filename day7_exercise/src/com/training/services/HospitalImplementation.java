@@ -99,7 +99,7 @@ public class HospitalImplementation implements Hospital {
 		// TODO Auto-generated method stub
 		appointments.put(doctor, null);
 //		System.out.println(appointments);
-		return false;
+		return true;
 	}
 
 
@@ -108,7 +108,7 @@ public class HospitalImplementation implements Hospital {
 		// TODO Auto-generated method stub
 		appointments.remove(doctor);
 		System.out.println(appointments);
-		return false;
+		return true;
 	}
 	
 

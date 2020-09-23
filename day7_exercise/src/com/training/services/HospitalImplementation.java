@@ -20,6 +20,7 @@ public class HospitalImplementation implements Hospital {
 
 	private HashMap<Doctor, ArrayList<Patient>> appointments = new HashMap<Doctor, ArrayList<Patient>>();
 	
+	// Checks if doctor exists or not.
 	boolean exists(Doctor doctor) {
 		Set<Doctor> tempDoctors = appointments.keySet();
 		for (Doctor eachDoctor : tempDoctors) {
@@ -30,6 +31,8 @@ public class HospitalImplementation implements Hospital {
 		return false;
 		
 	}
+	
+	//add a patient to the docter selected
 	@Override
 	public boolean createAppoinment(Patient patient, Doctor doctor) {
 		
@@ -54,6 +57,7 @@ public class HospitalImplementation implements Hospital {
 		
 	}
 
+	//gets appointments for a particular doctor
 	@Override
 	public ArrayList<Patient> getAppointments(Doctor doctor) {
 		// TODO Auto-generated method stub
@@ -65,6 +69,7 @@ public class HospitalImplementation implements Hospital {
 		}
 	}
 
+	//cancels an appointment of a patient from a doctor
 	@Override
 	public boolean cancelAppointment(Doctor doctor, Patient patient) {
 		// TODO Auto-generated method stub
@@ -94,6 +99,7 @@ public class HospitalImplementation implements Hospital {
 		
 	}
 
+	//adds a doctor to the hash map
 	@Override
 	public boolean appointDoctor(Doctor doctor) {
 		// TODO Auto-generated method stub
@@ -109,6 +115,7 @@ public class HospitalImplementation implements Hospital {
 	}
 
 
+	//cancels all appointments of a doctor
 	@Override
 	public boolean cancelAppointmentForDoctor(Doctor doctor) {
 		// TODO Auto-generated method stub

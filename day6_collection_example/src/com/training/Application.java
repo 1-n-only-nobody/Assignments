@@ -35,9 +35,9 @@ public class Application {
 
 		Invoice ram = new Invoice(101, "Ramesh", 4500);
 		
-		Invoice raj = new Invoice(102, "Rajesh", 5500);
+		Invoice raj = new Invoice(102, "Rajesh", 7000);
 		
-		Invoice rak = new Invoice(103, "Rakesh", 5500);
+		Invoice rak = new Invoice(103, "Rakesh", 9000);
 		
 		Invoice kam = new Invoice(104, "Kamlesh", 6500);
 		
@@ -67,6 +67,18 @@ public class Application {
 		System.out.println("Sorted List");
 		
 		printList(dao.sortByInvoiceNumber());
+		
+		System.out.println("Sort by name");
+		
+		printList(dao.sortBy("CustomerName"));
+		
+		System.out.println("Sort by invoiceNumber");
+		
+		printList(dao.sortBy("InvoiceNumber"));
+		
+		System.out.println("Sort by amount");
+		
+		printList(dao.sortBy("Amount"));
 	}
 
 }

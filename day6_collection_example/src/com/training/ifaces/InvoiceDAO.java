@@ -15,6 +15,8 @@ public interface InvoiceDAO {
 
 	Collection<Invoice> findAll();
 	Collection<Invoice> sortByInvoiceNumber();
+	Collection<Invoice> sortBy(String propName);
+	
 	boolean add(Invoice entity);
 	boolean add(Invoice... invoices);
 	Invoice findById(int id);

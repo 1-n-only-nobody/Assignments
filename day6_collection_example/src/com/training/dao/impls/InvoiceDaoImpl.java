@@ -10,6 +10,9 @@ import java.util.List;
 
 import com.training.entity.Invoice;
 import com.training.ifaces.InvoiceDAO;
+import com.training.utils.AmountComparator;
+import com.training.utils.CustomerNameComparator;
+import com.training.utils.InvoiceNumberComparator;
 
 /**
  * @author manan
@@ -89,6 +92,29 @@ public class InvoiceDaoImpl implements InvoiceDAO {
 	public Collection<Invoice> sortByInvoiceNumber() {
 		// TODO Auto-generated method stub
 		Collections.sort(this.invList);
+		return this.invList;
+	}
+
+	@Override
+	public Collection<Invoice> sortBy(String propName) {
+		// TODO Auto-generated method stub
+		String lowerPropName = propName.toLowerCase();
+		switch(lowerPropName) {
+		case "customername" :
+			CustomerNameComparator customerNameComparator = new CustomerNameComparator();
+			Collections.sort(this.invList, customerNameComparator);
+			break;
+		case "invoicenumber" :
+			InvoiceNumberComparator invoiceNumberComparator = new InvoiceNumberComparator();
+			Collections.sort(this.invList, invoiceNumberComparator);
+			break;
+		case "amount" :
+			AmountComparator amountComparator = new AmountComparator();
+			Collections.sort(this.invList, amountComparator);
+			break;
+		default:
+			System.out.println("Enter a valid field.");
+		}
 		return this.invList;
 	}
 

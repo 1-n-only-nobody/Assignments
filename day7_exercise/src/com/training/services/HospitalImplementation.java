@@ -97,7 +97,13 @@ public class HospitalImplementation implements Hospital {
 	@Override
 	public boolean appointDoctor(Doctor doctor) {
 		// TODO Auto-generated method stub
-		appointments.put(doctor, null);
+		ArrayList<Patient> tempPatientList = new ArrayList<>();
+		tempPatientList = appointments.put(doctor, null);
+		if (tempPatientList != null) {
+			System.out.println("Doctor already exists.");
+			appointments.put(doctor, tempPatientList);
+			return false;
+		}
 //		System.out.println(appointments);
 		return true;
 	}

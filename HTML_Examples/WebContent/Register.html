@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Register</title>
+<link rel="stylesheet" href="styles/style1.css">
+</head>
+<body>
+	<header>
+		<h1>Register</h1>
+	</header>
+	<section>
+	
+		<form action="index.html" method="get">
+		
+			<div>
+				<label>FirstName</label>
+				<input type="text" name="firstName" required="required">
+			</div>
+			
+			<div>
+				<label>LastName</label>
+				<input type="text" name="lastName" required="required">
+			</div>
+			
+			<div>
+				<label>Date Of Birth</label>
+				<input type="date" name="date" required="required">
+			</div>
+			
+			<div>
+				<label>E-mail</label>
+				<input type="email" name="email" required="required">
+			</div>
+			
+			<div>
+				<label>City</label>
+				<select>
+					<option value="ahmedabad">Ahmedabad</option>
+					<option value="rajkot">Rajkot</option>
+				</select>
+			</div>
+			
+			<div>
+				<label>Marital Status</label>
+				<input type="radio" name="marital" value="married" checked="checked" >Married
+				<input type="radio" name="marital" value="single">Single
+			</div>
+			
+			<div>
+				<label>Special Intrests</label>
+				<input type="checkbox" name="intrests" value="sports" checked="checked" >Sports
+				<input type="checkbox" name="intrests" value="music">Music
+				<input type="checkbox" name="intrests" value="politics">Politics
+			</div>
+			
+			<div>
+				<label>Comments</label>
+				<textarea rows="3" cols="30"></textarea>
+			</div>
+			
+			<div>
+				<input type="reset">
+				<input type="submit" value="Login">
+			</div>
+		
+		</form>
+		
+	</section>
+
+</body>
+</html>

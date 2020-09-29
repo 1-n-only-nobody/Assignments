@@ -8,6 +8,6 @@
 </head>
 <body>
 
-<a href="">${adminid}</a>  
+<h4><a href="">${adminId}</a><span><%= request.getAttribute("adminId") %></span> </h4>
 </body>
 </html>

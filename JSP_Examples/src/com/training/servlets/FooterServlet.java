@@ -26,7 +26,7 @@ public class FooterServlet extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-	private String paramValue = null;
+	private String initParamValue = null;
     public FooterServlet() {
         super();
         // TODO Auto-generated constructor stub
@@ -38,8 +38,8 @@ public class FooterServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
 //		paramValue = getServletConfig().getInitParameter("adminId");
-		paramValue = config.getInitParameter("adminId");
-//		System.out.println(paramValue);
+		initParamValue = config.getInitParameter("adminId");
+//		System.out.println(initParamValue);
 	}
 
 	/**
@@ -47,7 +47,8 @@ public class FooterServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		doPost(request, response);
 	}
 
 	/**
@@ -56,7 +57,7 @@ public class FooterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 //		String paramValue = getServletConfig().getServletName();
-		request.setAttribute("adminid", paramValue);
+		request.setAttribute("adminId", this.initParamValue);
 		request.setAttribute("designerName", "Manan");
 		
 //		System.out.println(paramValue);

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="day10_assignment">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <dependent-module archiveName="derby.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Idiotic_Software/db-derby-10.14.2.0-bin/lib/derby.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="derbyclient.jar" deploy-path="/WEB-INF/lib" handle="module:/classpath/lib/C:/Idiotic_Software/db-derby-10.14.2.0-bin/lib/derbyclient.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="day10_assignment"/>
+        <property name="java-output-path" value="/day10_assignment/build/classes"/>
+    </wb-module>
+</project-modules>

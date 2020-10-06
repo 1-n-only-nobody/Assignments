@@ -78,7 +78,7 @@ public class Invoice implements Serializable, Comparable<Invoice> {
 	public int compareTo(Invoice otherObj) {
 		// TODO Auto-generated method stub
 		if (this.invoiceNumber < otherObj.invoiceNumber) return -1;
-		if (this.invoiceNumber > otherObj.invoiceNumber) return 11;
+		if (this.invoiceNumber > otherObj.invoiceNumber) return 1;
 		return 0;
 	}
 

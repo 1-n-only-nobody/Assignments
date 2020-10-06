@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JSON Caller</title>
+</head>
+<body>
+<p  id="para"></p>
+<script type="text/javascript">
+var xhr = new XMLHttpRequest();
+var paraField = document.getElementById("para");
+var url = "https://jsonplaceholder.typicode.com/users";
+xhr.onreadystatechange = processRequest;
+xhr.open("GET",url);
+xhr.send(null);
+function processRequest(){
+	
+	if(xhr.readyState == 4 && xhr.status == 200){
+		var jsonValue = JSON.parse(xhr.responseText);
+		console.log(jsonValue);
+		for(var i = 0; i< jsonValue.length; i++){
+			paraField.innerHTML += "Id: " + jsonValue[i].id + " <br> Name: " + jsonValue[i].name + " <br> email: " + jsonValue[i].email + "<br>";
+		}
+	}
+}
+</script>
+</body>
+</html>

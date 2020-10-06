@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+<form action="">
+<input type="button" name="viewMembers" value="View Members" id="viewMembers">
+<input type="button" name="addMembers" value="Add Member" id="addMembers">
+<input type="button" name="penaltyMembers" value="View Members with Penalty" id="penaltyMembers">
+</form>
+<script type="text/javascript">
+	var buttonView = document.getElementById("viewMembers");
+	var buttonAdd = document.getElementById("addMembers");
+	var buttonPenalty = document.getElementById("penaltyMembers");
+	
+	buttonView.addEventListener('click', function(){
+		location.href = "viewMembers.html";
+	});
+	buttonAdd.addEventListener('click', function(){
+		location.href = "addMember.html";
+	});
+	buttonPenalty.addEventListener('click', function(){
+		location.href = "penalty.html";
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>View Members</title>
+</head>
+<body>
+<p id="para"></p>
+<button name="home" value="Back To Home" id="home">Back To Home</button>
+<script type="text/javascript">
+	var xhr = new XMLHttpRequest();
+	var paraField = document.getElementById("para");
+	var url = "applicationServlet";
+	xhr.onreadystatechange = processRequest;
+	xhr.open("GET", url, true);
+	xhr.send(null);
+	console.log(xhr);
+	var buttonHome = document.getElementById("home");
+	
+	buttonHome.addEventListener('click', function(){
+		location.href = "index.html";
+	});
+	function processRequest(){
+		console.log("inside process request");
+		if(xhr.readyState == 4 && xhr.status == 200){
+			var jsonValue = JSON.parse(xhr.responseText);
+			console.log(jsonValue);
+			if (Array.isArray(jsonValue)){
+				for(var i = 0; i < jsonValue.length; i++){
+					paraField.innerHTML += " <br> Id: " + jsonValue[i].memberId + " <br> Name: " + jsonValue[i].memberName + " <br> Membership Type: " + jsonValue[i].membershipType + "<br> Account Opening Date: " + jsonValue[i].accountOpeningDate.day + "/" + jsonValue[i].accountOpeningDate.month + "/" + jsonValue[i].accountOpeningDate.year + " <br> Maximum Books Allowed: " + jsonValue[i].maxBookAllowed + " <br> Penalty Amount: " + jsonValue[i].penaltyAmount + "<hr>";
+				}
+			} else{
+// 				paraField.innerHTML += " <br> Id: " + jsonValue.memberId + " <br> Name: " + jsonValue.memberName + " <br> Membership Type: " + jsonValue.membershipType + "<br> Account Opening Date: " + jsonValue.accountOpeningDate.day + "/" + jsonValue.accountOpeningDate.month + "/" + jsonValue.accountOpeningDate.year + " <br> Maximum Books Allowed: " + jsonValue.maxBookAllowed + " <br> Penalty Amount: " + jsonValue.penaltyAmount;
+				console.log("Empty Array.")
+			}
+		}
+	}
+	
+</script>
+</body>
+</html>

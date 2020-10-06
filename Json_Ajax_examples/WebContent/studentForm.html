@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Form</title>
+</head>
+<body>
+<form action="">
+<label>Student Id</label>
+<input type="number" name="studentId" id="studentId">
+<label>Student Name</label>
+<input type="text" name="studentName" id="studentName">
+<input type="button" id="button" value="Button">
+</form>
+<p id="para" name="para"></p>
+<script type="text/javascript">
+var studentIdField = document.getElementById("studentId");
+var buttonField = document.getElementById("button");
+var xhr = new XMLHttpRequest();
+var jsonValue = null;
+var jsonValue1 = null;
+
+studentIdField.addEventListener('blur', function(){
+	
+	var id = studentIdField.value;
+	console.log(id);
+	var url = "StudentServlet?id=" + id;
+	
+	
+	xhr.onreadystatechange = processRequest;
+	
+	xhr.open("GET", url, true);
+	xhr.send(null);
+	
+	console.log(xhr);
+	
+	console.log(studentIdField.value);
+});
+
+ 
+
+buttonField.addEventListener('click', function(){
+	var studentNameField = document.getElementById("studentName");
+	var name = studentNameField.value;
+	var id = studentIdField.value;
+	var urlPost = "StudentServlet";
+// 	var idString = "id="+id;
+	xhrs.onreadystatechange = proRequest;
+	xhrs.open("POST", urlPost, true);
+	xhrs.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+	xhrs.send("id="+id+"&name="+name);
+	console.log(xhr);
+});
+
+function processRequest(){
+	var studentNameField = document.getElementById("studentName");
+	
+	if(xhr.readyState == 4 && xhr.status == 200){
+		jsonValue = JSON.parse(xhr.responseText);
+		studentNameField.value = jsonValue.studentName;
+		
+	}
+	
+}
+
+function proRequest() {
+	var paraField = document.getElementById("para");
+	if(xhrs.readyState == 4 && xhrs.status == 200){
+		jsonValue1 = JSON.parse(xhrs.responseText);
+		paraField.innerHTML = "Student Name: " + jsonValue.studentName + " <br> Student Id: " + jsonValue.studentId;
+		
+	}
+}
+</script>
+</body>
+</html>

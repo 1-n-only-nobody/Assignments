@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Ajax Example</title>
+</head>
+<body>
+
+
+<form action="">
+<label>Username</label>
+<input type="text" name="username" id="username"><span id="msg"></span>
+<label>Password</label>
+<input type="password" name="password" id="password">
+</form>
+<script type="text/javascript">
+
+var usrNameField = document.getElementById("username");
+var xhr = new XMLHttpRequest();
+
+usrNameField.addEventListener('blur', function(){
+	
+	var name = usrNameField.value;
+// 	var xhr = new XMLHttpRequest();
+	var url = "validate?username=" + name;
+	
+	xhr.onreadystatechange = processRequest;
+	
+	xhr.open("GET", url, true);
+	xhr.send(null);
+	
+	console.log(xhr);
+	
+	console.log(usrNameField.value);
+	
+});
+
+function processRequest(){
+	
+	var msgField = document.getElementById("msg");
+	
+	
+	
+	if(xhr.readyState == 4 && xhr.status == 200){
+		msgField.innerHTML = xhr.responseText;
+		if (xhr.responseText.trim() == "valid") {
+			msgField.style.color = "#00ff00";
+		} else {
+			msgField.style.color = "#ff0000";
+		}
+	}
+}
+
+</script>
+</body>
+</html>

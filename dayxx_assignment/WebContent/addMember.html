@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Members</title>
+</head>
+<body>
+<form action="applicationServlet" method="post">
+
+<label>Member ID:</label>
+<input type="number" id="memberId" name="memberId">
+<br>
+<label>Member Name:</label>
+<input type="text" id="memberName" name="memberName">
+<br>
+<label>Account Opening Date:</label>
+<input type="date" id="accountOpeningDate" name="accountOpeningDate">
+<br>
+<label>Membership Type:</label>
+<select id="membershipType" name="membershipType">
+	<option value="Lifetime">Lifetime</option>
+	<option value="Annual">Annual</option>
+	<option value="Half Yearly">Half Yearly</option>
+	<option value="Quarterly">Quarterly</option>
+</select>
+<br>
+<label>Fees Paid:</label>
+<input type="number" id="feesPaid" name="feesPaid" step="any">
+<br>
+<label>Maximum Books Allowed</label>
+<input type="number" id="maxBookAllowed" name="maxBookAllowed">
+<br>
+<label>Penalty Amount:</label>
+<input type="number" id="penaltyAmount" name="penaltyAmount" step="any">
+<br>
+<input type="submit">
+<br>
+<input type="button" name="home" value="Back To Home" id="home">
+</form>
+<script type="text/javascript">
+	var buttonHome = document.getElementById("home");
+	
+	buttonHome.addEventListener('click', function(){
+		location.href = "index.html";
+	});
+</script>
+</body>
+</html>
